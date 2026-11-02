@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+  #storeMap { height: 400px; width: 100%; border: 2px solid #000; margin-top:15px; }
+  .error { color:red; font-size:12px; }
+  form input, form select, form textarea { display:block; width:90%; margin:8px 0; padding:8px; }
+</style>
+</head>
+<body>
+    <header>
+        <h1>STEPUP SNEAKERS</h1>
+        <nav>
+            <a href="Homepage.HTML">Home</a>
+            <a href="about.HTML">About</a>
+            <a href="products.HTML">Shop</a>
+            <a href="enquiry.HTML">Enquiry</a>
+            <a href="contact.HTML">Contact</a>
+        </nav>
+    </header><br>
+
+<form id="contactForm" novalidate>
+    <label for="">Full Name</label>
+    <input type="text" id="cname">
+    <label for="">Email</label>
+    <input type="email" id="cemail">
+    <label for="">Phone Number</label>
+    <input type="tel" id="cphone">
+
+<select id="msgType" required>
+<option value="">Message Type</option>
+<option>General</option><option>Order Support</option><option>Return</option>
+</select>
+<textarea id="fullMessage" required minlength="20" maxlength="500" placeholder="Full message 20-500 chars"></textarea>
+<button type="submit">Send Email</button>
+</form>
+
+<p id="contactResult"></p>
+
+<h2>Find Us</h2>
+<div id="storeMap"></div>
+<p><strong>Address:</strong> 15 Charlotte Maxeke Street, Bloemfontein</p>
+<p><strong>Email:</strong> info@stepupsneakers.co.za</p>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var map = L.map('storeMap').setView([-29.0852, 26.1596], 13);
+  
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  L.marker([-29.0852, 26.1596]).addTo(map)
+    .bindPopup("<b>Stepup Sneakers</b><br>Bloemfontein Store<br>15 Charlotte Maxeke St")
+    .openPopup();
+});
+</script>
+
+    <footer>
+        <p>&copy; 2026 StepUp Sneakers. All rights reserved.</p>
+    </footer>
+</body>
+</html>

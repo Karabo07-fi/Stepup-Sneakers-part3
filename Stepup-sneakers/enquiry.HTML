@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiry</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>STEPUP SNEAKERS</h1>
+        <nav>
+            <a href="index.html">Home</a> 
+            <a href="products.html">Products</a> 
+            <a href="enquiry.html">Enquiry</a> 
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header><br>
+    
+<form id="enquiryForm" novalidate>
+<input type="text" id="name" required minlength="3" pattern="[A-Za-z ]+" placeholder="Full Name - e.g. Karabo Fish">
+<input type="email" id="email" required placeholder="Email">
+<input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="Phone 10 digits - 0812345678">
+
+<select id="product" required>
+<option value="">Select Sneaker</option>
+<option>Nike Air Max - R1899</option>
+<option>Adidas Yeezy - R2599</option>
+<option>Jordan Retro 4 - R3200</option>
+<option>Puma RS-X - R1499</option>
+<option>Become Volunteer</option>
+</select>
+
+<select id="size" required>
+<option value="">Size</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+<input type="number" id="qty" min="1" max="10" value="1" required>
+<textarea id="enquiryMsg" minlength="10" placeholder="Ask about cost, availability..."></textarea>
+<button type="submit">Get Quote</button>
+</form>
+<div id="enquiryResult" style="display:none; padding:15px; border:1px solid #ccc; margin-top:15px;"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
